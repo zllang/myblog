@@ -1,4 +1,3 @@
-baseurl: /myblog
 name: My Blog
 markdown: redcarpet
 pygments: true
