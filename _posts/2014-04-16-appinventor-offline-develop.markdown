@@ -50,6 +50,7 @@ Appinventor早前是google实验室的一个项目，旨在实现让没有丰富
 >`gedit common/build/src/com/google/appinventor/common/version/GitBuildId.java`
 
 在大概17行左右找到如下代码。
+
 ```
   // The following values are set during the ant build.
   public static final String GIT_BUILD_VERSION = "fatal: Not a git repository (or any parent up to mount point /home)
@@ -59,6 +60,7 @@ Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).";
 ```
 我们需要将两个=号后面引号中的字符全都删除，或者将引号中第一行最后的换行符删除。这是代码中故意留下的与BUG检测相关的设置，我们这可以不关注。
 可以直接为如下
+
 ```
   // The following values are set during the ant build.
   public static final String GIT_BUILD_VERSION = "";
