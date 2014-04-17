@@ -47,19 +47,18 @@ Appinventor早前是google实验室的一个项目，旨在实现让没有丰富
 **在正式开始编译之前，还需要改两处**
 
 执行以下命令使用gedit打开这个文件，
->`gedit common/build/src/com/google/appinventor/common/version/GitBuildId.java`
+>`gedit common/GitBuildId.template`
 
 在大概17行左右找到如下代码。
 
 ```
   // The following values are set during the ant build.
-  public static final String GIT_BUILD_VERSION = "fatal: Not a git repository (or any parent up to mount point /home)
-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).";
-  public static final String GIT_BUILD_FINGERPRINT = "fatal: Not a git repository (or any parent up to mount point /home)
-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).";
+  // The following values are set during the ant build.
+  public static final String GIT_BUILD_VERSION = "@git.build.version@";
+  public static final String GIT_BUILD_FINGERPRINT = "@git.build.fingerprint@";
+  
 ```
-我们需要将两个=号后面引号中的字符全都删除，或者将引号中第一行最后的换行符删除。这是代码中故意留下的与BUG检测相关的设置，我们这可以不关注。
-可以直接为如下
+我们需要将两个=号后面引号中的字符全都删除，这是代码使用git clone后编译时自动生成的，因为我们直接下载源码包，不包含这两个值，所以把它设成空。如下
 
 ```
   // The following values are set during the ant build.
