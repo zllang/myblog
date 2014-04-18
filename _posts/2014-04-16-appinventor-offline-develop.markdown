@@ -53,7 +53,6 @@ Appinventor早前是google实验室的一个项目，旨在实现让没有丰富
 
 ```
   // The following values are set during the ant build.
-  // The following values are set during the ant build.
   public static final String GIT_BUILD_VERSION = "@git.build.version@";
   public static final String GIT_BUILD_FINGERPRINT = "@git.build.fingerprint@";
   
